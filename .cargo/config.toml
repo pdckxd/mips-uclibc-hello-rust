@@ -1,0 +1,13 @@
+[target.mipsel-unknown-linux-uclibc]
+#cc = "mipsel-linux-uclibc-gcc"
+#cxx = "mipsel-linux-uclibc-c++"
+ar = "mipsel-linux-uclibc-ar"
+linker = "mipsel-linux-uclibc-gcc"
+#rustflags = ["-C", "target-feature=+crt-static", "-C", "link-arg=-s", "-C", "link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/sysroot/lib/", "-C", "link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/lib", "-C", "link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/sysroot/usr/lib/", "-C", "link-arg=-ldl", "-C", "link-arg=-lgcc_s", "-C", "link-arg=-lc"]
+rustflags = ["-C", "link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/sysroot/lib/", "-C", "link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/lib", "-C", "link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/sysroot/usr/lib/", "-C", "link-arg=-L/opt/rt-n56u/trunk/stage/lib/", "-C", "link-arg=-ldl", "-C", "link-arg=-lgcc_s", "-C", "link-arg=-lc", "-C", "link-arg=-luv"]
+
+
+#[target.mipsel-unknown-linux-uclibc.gcc_s]
+#rustc-link-lib = ["libgcc_s.so"]
+#rustc-link-search = ["/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/lib"]
+#rustc-flags = "-L /opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/lib"
