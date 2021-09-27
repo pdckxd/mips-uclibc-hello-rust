@@ -56,7 +56,12 @@ export CC_mips_unknown_linux_uclibc=mipsel-linux-uclibc-gcc
 strace rustc 2>&1 | grep <lib name>
 ```
 
-5. Git clone rust repo with all submodule otherwise you will get error when calling python ./x.py install
+5. Check exported symbol list
+```
+readelf --symbols /opt/wsl/usr/local/lib/libc.so.1|grep dl_iterate_phdr
+```
+
+6. Git clone rust repo with all submodule otherwise you will get error when calling python ./x.py install
 ```
 git clone https://github.com/rust-lang/rust.git
 git submodule update --init --recursive
