@@ -7,6 +7,8 @@
 1. Build Padavan firmware to getting all necessary native libraries for route os according to https://www.kiloleaf.com/posts/cross-compile-rust-for-openwrt/
    1. It's better to flash firmware built by yourself to avoid some version miss match issue
 2. Build rustc toolchain for mipsel-unknown-linux-uclibc target according to https://www.kiloleaf.com/posts/cross-compile-rust-for-openwrt/
+   1. I successfully built rust 1.55 for mipsel-unknown-linux-uclibc target
+   2. See my config.toml file in rust source folder
 
 ## Limitation
 1. Since uclibc is not fully supported by rust. Most of 3rd part library won't be built such as 
