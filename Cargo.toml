@@ -6,4 +6,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+openssl = "0.10.23"
+#reqwest = { version = "0.11", features = ["json"] }
+#tokio = { version = "1", features = ["full"] }
 #curl = "0.4.38"

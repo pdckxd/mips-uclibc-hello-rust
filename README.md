@@ -39,6 +39,7 @@ error[E0463]: can't find crate for `std`
 ```
 link-arg=-L/opt/rt-n56u/toolchain-mipsel/toolchain-3.4.x/mipsel-linux-uclibc/sysroot/lib/
 ```
+
 2. Ninja not found by CMake
 ```
 ln -s /usr/bin/ninja /usr/sbin/ninja
@@ -67,6 +68,24 @@ git clone https://github.com/rust-lang/rust.git
 git submodule update --init --recursive
 ```
 
+7. Resolve "error[E0463]: can't find crate for `std`"
+```
+rustup show
+# optional
+rustup default stable-x86_64-unknown-linux-gnu
+export OPENSSL_LIB_DIR=/opt/rt-n56u/trunk/libs/libssl/openssl-1.1.1k
+export OPENSSL_INCLUDE_DIR=/opt/rt-n56u/trunk/libs/libssl/openssl-1.1.1k/include
+# this is really important otherwise unexpected error will occur
+export PATH=/opt/wsl/usr/local/bin:$PATH
+cargo build --release --target=mipsel-unknown-linux-uclibc -v
+```
+
+8. Resolve "Could not find directory of OpenSSL installation, and this `-sys` crate cannot"
+```
+export OPENSSL_LIB_DIR=/opt/rt-n56u/trunk/libs/libssl/openssl-1.1.1k
+export OPENSSL_INCLUDE_DIR=/opt/rt-n56u/trunk/libs/libssl/openssl-1.1.1k/include
+```
+
 ## How to
 
 1. Cross Build
@@ -85,6 +104,8 @@ system type             : MediaTek MT7621 SoC
 processor               : 0
 cpu model               : MIPS 1004Kc V2.15
 ```
+2. sccache - Shared Compilation Cache (rustc-wrapper = "/path/to/sccache")
+   https://github.com/mozilla/sccache/
 
 ## Reference
 
@@ -92,13 +113,23 @@ cpu model               : MIPS 1004Kc V2.15
 2. https://github.com/hanwckf/rt-n56u
 3. https://rustc-dev-guide.rust-lang.org/building/how-to-build-and-run.html
 4. https://stackoverflow.com/questions/24145823/how-do-i-convert-a-c-string-into-a-rust-string-and-back-via-ffi
+5. https://rustwiki.org/zh-CN/rust-by-example/hello/print/print_display.html - rust by example "Chinese version"
+6. https://doc.rust-lang.org/nomicon/ownership.html - The Dark Arts of Unsafe Rust
+7. https://doc.rust-lang.org/cargo/index.html - Cargo book
+8. https://dhghomon.github.io/easy_rust/Chapter_1.html - Easy rust
+9. https://doc.rust-lang.org/std/ - Rust std doc
+10. https://cheats.rs/ - Rust cheats
 
 ## Useful tools
 1. tmux
 2. htop
 
 ## Backup
-1. May need to setup GW manually
+1. May need to set up GW manually on rouer OS
 ```
 ip ro add default via 192.168.1.1
+```
+2. To resolve
+```
+/opt/wsl/usr/local/bin/rustc --crate-name pkg_config /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/pkg-config-0.3.20/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debug-assertions=off -C metadata=1eb2583553d0fa50 -C extra-filename=-1eb2583553d0fa50 --out-dir /home/user/rust_projects/mips-uclibc-hello-rust/target/release/deps -L dependency=/home/user/rust_projects/mips-uclibc-hello-rust/target/release/deps --cap-lints allow -L /opt/wsl/usr/local/lib/rustlib/mipsel-unknown-linux-uclibc/lib/ --target=mipsel-unknown-linux-uclibc
 ```
