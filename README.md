@@ -11,7 +11,7 @@
    2. See my config.toml file in rust source folder
 
 ## Limitation
-1. Since uclibc is not fully supported by rust. Most of 3rd part library won't be built such as 
+1. Since uclibc is not fully supported by rust. Most of 3rd part library won't be built such as
 ```
 user@user-VirtualBox:~/rust_projects/hello$ cargo build --release --target=mipsel-unknown-linux-uclibc
     Updating crates.io index
@@ -119,6 +119,7 @@ cpu model               : MIPS 1004Kc V2.15
 8. https://dhghomon.github.io/easy_rust/Chapter_1.html - Easy rust
 9. https://doc.rust-lang.org/std/ - Rust std doc
 10. https://cheats.rs/ - Rust cheats
+11. https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html - Rust Async
 
 ## Useful tools
 1. tmux
