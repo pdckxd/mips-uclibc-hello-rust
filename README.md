@@ -120,6 +120,7 @@ cpu model               : MIPS 1004Kc V2.15
 9. https://doc.rust-lang.org/std/ - Rust std doc
 10. https://cheats.rs/ - Rust cheats
 11. https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html - Rust Async
+12. https://rustcc.gitbooks.io/rustprimer/content/intoborrow/cow.html - Rust Primer "Chinese version"
 
 ## Useful tools
 1. tmux
