@@ -122,6 +122,7 @@ cpu model               : MIPS 1004Kc V2.15
 11. https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html - Rust Async
 12. https://rustcc.gitbooks.io/rustprimer/content/intoborrow/cow.html - Rust Primer "Chinese version"
 13. https://rust-lang-nursery.github.io/rust-cookbook/intro.html - Rust Cookbook
+13. https://rust-lang-nursery.github.io/rust-cookbook/intro.html - Esy Rust
 
 ## Useful tools
 1. tmux
