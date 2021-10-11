@@ -123,6 +123,7 @@ cpu model               : MIPS 1004Kc V2.15
 12. https://rustcc.gitbooks.io/rustprimer/content/intoborrow/cow.html - Rust Primer "Chinese version"
 13. https://rust-lang-nursery.github.io/rust-cookbook/intro.html - Rust Cookbook
 13. https://rust-lang-nursery.github.io/rust-cookbook/intro.html - Esy Rust
+14. https://github.com/johnthagen/min-sized-rust - (important) How to reduce size of rust application
 
 ## Useful tools
 1. tmux
